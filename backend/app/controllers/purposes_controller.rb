@@ -2,7 +2,12 @@ class PurposesController < ApplicationController
   before_action :set_product
 
   def index
-    purposes = @product.purposes 
+    # if @product 
+    #   purposes = @product.purposes 
+    # else
+    #   purposes = Purpose.all  
+    # end
+    purposes = @product.purposes
     render json: purposes
   end
   
