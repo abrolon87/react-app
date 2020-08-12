@@ -14,12 +14,23 @@ class App extends Component {
   // }
 
   render() {
+  const products = this.props.products.map((product, i) => <li key={i}>{product.name}</li>)
     return (
       <div className="App">
-        Home Remedies
+        <h1>Home Remedies</h1>
+        <ul>
+          {this.props.loading ? <h3>Loading...</h3> :products}
+        </ul>
       </div>
     )
   }
 }
 
-export default connect()(App);
+const mapStateToProps = state => {
+  return {
+    products: state.productReducer.products,
+    loading: state.productReducer.loading
+  }
+}
+
+export default connect(mapStateToProps)(App);
