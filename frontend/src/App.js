@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
-import {getProducts} from './actions/products'
+import {getProducts} from './actions/getProducts'
 // import logo from './logo.svg';
 // import './App.css';
 
