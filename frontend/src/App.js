@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   render() {
-  const products = this.props.products.map((product, i) => <li key={i}><a href="#">{product.name}</a></li>)
+  const products = this.props.products.map((product, i) => <li key={i}>{product.name}</li>)  //add a tag later 
     return (
       <div className="App">
         <h1>Home Remedies</h1>
