@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import {createStore, applyMiddleware, compose} from 'redux'  //set up store
+import {createStore, applyMiddleware} from 'redux'  //set up store
 import {composeWithDevTools} from 'redux-devtools-extension'
 import rootReducer from './reducers/index'
 import thunk from 'redux-thunk'
