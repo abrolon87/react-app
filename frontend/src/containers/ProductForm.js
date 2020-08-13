@@ -41,6 +41,4 @@ class ProductForm extends Component {
   }
 }
 
-
-//export default ProductForm;
 export default connect(null, {addProduct})(ProductForm)
