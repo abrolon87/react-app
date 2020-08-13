@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux'
-import {getProducts} from './actions/products'
+import {getProducts, deleteProduct} from './actions/products'
 import ProductForm from './containers/ProductForm';
 // import logo from './logo.svg';
 // import './App.css';
@@ -9,15 +9,16 @@ class App extends Component {
 
   componentDidMount() {
     this.props.getProducts()
-    // fetch('http://localhost:3001/products', {
-    //   method: 'GET'
-    // })
-    // .then(resp => resp.json())
-    // .then(data => console.log(data))
+  }
+
+  handleClick = (event) => {
+    this.props.deleteProduct(event.target.id)
   }
 
   render() {
-  const products = this.props.products.map((product, i) => <li key={i}>{product.name}</li>)  //add a tag later 
+  const products = this.props.products.map((product, i) => <li key={i}>{product.name}
+  <button id={product.id} onClick={this.handleClick} >X</button>
+  </li>)  //add a tag later 
     return (
       <div className="App">
         <h1>Add a Product </h1>
@@ -39,4 +40,4 @@ const mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, {getProducts})(App);
+export default connect(mapStateToProps, {getProducts, deleteProduct})(App);
