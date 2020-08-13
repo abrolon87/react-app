@@ -5,9 +5,7 @@ import { addProduct } from '../actions/products'
 
 class ProductForm extends Component {
   state = {
-    product: {
-      name: ""
-    },
+    name: "",
     loading: false
   }
 

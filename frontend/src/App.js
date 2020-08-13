@@ -22,7 +22,6 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Add a Product </h1>
-
         <ProductForm />
         <h1>Click on a Product to see its uses:</h1>
         <ul>
