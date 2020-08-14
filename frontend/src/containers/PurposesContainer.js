@@ -6,7 +6,7 @@ class PurposesContainer extends Component {
   render() {
     return (
       <div>        
-        <PurposeForm />
+        <PurposeForm product={this.props.product}/>
         <Purposes purposes={this.props.product && this.props.product.purposes}/>
       </div>
     )
