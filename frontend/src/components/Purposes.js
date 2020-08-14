@@ -9,7 +9,7 @@ const Purposes = (props) => {
       <div>
         {/* first time load is undefined, this fixes that */}
         {props.purposes && props.purposes.map(purpose =>   
-          <li key={purpose.id}>{purpose.body}</li>
+          <li key={purpose.id}>{purpose.body}<button>x</button></li>
         )}
       </div>
     )
