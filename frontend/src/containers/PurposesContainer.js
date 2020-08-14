@@ -7,7 +7,7 @@ class PurposesContainer extends Component {
     return (
       <div>        
         <PurposeForm />
-        <Purposes />
+        <Purposes purposes={this.props.product && this.props.product.purposes}/>
       </div>
     )
   }
