@@ -23,7 +23,7 @@ class ProductsContainer extends Component {
         <Switch>
           <Route path='/products/new' component={ProductForm}/>
           <Route path='/products/:id' render={(routerProps) => <Product {...routerProps} products={this.props.products}/>} />
-          <Route exact path='/products' render={(routerProps) => <Products {...routerProps} products={this.props.products}/>} />
+          <Route path='/products' render={(routerProps) => <Products {...routerProps} products={this.props.products}/>} />
         </Switch>
       </div>
     )
