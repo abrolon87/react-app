@@ -1,10 +1,13 @@
-import React from 'react'
+import React, {Component} from 'react'
 import {connect} from 'react-redux'
+import {Route} from 'react-router-dom'
 import {getProducts, deleteProduct} from '../actions/products'
-import ProductForm from '../components/ProductForm' 
 import Products from '../components/Products'
+import Product from '../components/Product'
+import ProductForm from '../components/ProductForm' 
 
-class ProductsContainer extends React.Component {
+
+class ProductsContainer extends Component {
 
   componentDidMount() {
     this.props.getProducts()
@@ -13,12 +16,13 @@ class ProductsContainer extends React.Component {
   handleClick = (event) => {
     this.props.deleteProduct(event.target.id)
   }
-
+ 
   render() {
     return (
       <div>
-        <ProductForm />
-        <Products />
+        <Route path='/products/new' component={ProductForm}/>
+        <Route path='/products/:id'render={(routerProps) => <Product {...routerProps} products={this.props.products}/>} />
+        <Route exact path='/products' render={(routerProps) => <Products {...routerProps} products={this.props.products}/>} />
       </div>
     )
   }
