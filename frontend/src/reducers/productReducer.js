@@ -1,4 +1,5 @@
 export default (state = {products: [], loading: false}, action) => {
+  
   switch(action.type){
     case "LOADING_PRODUCTS":
       return {
@@ -38,7 +39,17 @@ export default (state = {products: [], loading: false}, action) => {
         products: [...state.products.filter(product => `${product.id}` !== action.payload)],
         loading: false
       }
-
+     
+    case "ADD_PURPOSE":
+      let products = state.products.map(product => {
+          if (product.id === action.payload.id) {
+            return action.payload
+          } else {
+            return product
+          }
+        })
+      return {...state, products: products}
+      
     default: 
       return state
   }
