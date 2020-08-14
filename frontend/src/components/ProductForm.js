@@ -11,7 +11,7 @@ class ProductForm extends Component {
 
   handleChange = (event) => {
     this.setState({
-      name: event.target.value
+      [event.target.name]: event.target.value
     })
   }
 
@@ -29,7 +29,7 @@ class ProductForm extends Component {
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" 
+          <input type="text" name="name"
           value={this.state.name} 
           onChange={this.handleChange} />
           <input type="submit" value="Add Product" />  
@@ -40,3 +40,4 @@ class ProductForm extends Component {
 }
 
 export default connect(null, {addProduct})(ProductForm)
+

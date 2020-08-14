@@ -6,7 +6,7 @@ const Product = (props) => {
 
   console.log(props)
   let product = props.products.filter(product => product.id == props.match.params.id)[0]
-  //let product = props.products.filte[0]
+  //let product = props.products[props.match.params.id - 1]
 
   console.log(product)
   
