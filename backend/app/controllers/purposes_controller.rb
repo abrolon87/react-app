@@ -21,7 +21,7 @@ class PurposesController < ApplicationController
     purpose = @product.purposes.build(purpose_params)
 
     if purpose.save 
-      render json: purpose   
+      render json: @product   
     else   
       render json: purpose.errors, status: unprocessable_entity # {error: 'Error creating'}
     end
