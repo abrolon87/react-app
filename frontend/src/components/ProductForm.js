@@ -23,6 +23,7 @@ class ProductForm extends Component {
       name: "",
       loading: false
     })
+    this.props.history.push('/products')
   }
 
   render() {
