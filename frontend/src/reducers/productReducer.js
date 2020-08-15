@@ -49,7 +49,20 @@ export default (state = {products: [], loading: false}, action) => {
           }
         })
       return {...state, products: products}
+    
+    case "DELETE_PURPOSE":
       
+      let purposeProducts = state.products.map(product => {
+          if (product.id === action.payload.id) {
+            return action.payload
+          } else {
+            return product
+          }
+        })
+      return {...state, 
+        products: purposeProducts
+      }
+
     default: 
       return state
   }

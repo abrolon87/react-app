@@ -12,3 +12,15 @@ export const addPurpose = (purpose, productId) => {
     .then(product => dispatch({type: 'ADD_PURPOSE', payload: product}))
   }
 }
+
+export const deletePurpose = (purposeId, productId) => {
+
+  return (dispatch) => {
+    return fetch(`http://localhost:3001/products/${productId}/purposes/${purposeId}`, {
+      method: 'DELETE'
+    })
+    .then(resp => resp.json())
+    .then(product  => dispatch({type: 'DELETE_PURPOSE', payload: product}))
+  }
+
+}

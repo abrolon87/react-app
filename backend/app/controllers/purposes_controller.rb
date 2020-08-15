@@ -33,9 +33,11 @@ class PurposesController < ApplicationController
   # end
 
   def destroy
-    purpose = Purpose.find(params[:id])
-    purpose.delete
-    render json: {purposeId: purpose.id}
+    purpose = Purpose.find(params["id"])
+    #product = Product.find(purpose.product_id)
+    purpose.destroy
+    
+    render json: @product#{purposeId: purpose.id}
   end
   
   private 
