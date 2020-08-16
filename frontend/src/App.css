@@ -1,7 +1,19 @@
 .App {
   text-align: center;
+  border: 2px outset #00A412;
+  background-color: #F5ECBB; /*none no-repeat fixed 50% 50%; */
+  opacity: 0.9;
+  width: 200px;
+  
+  padding: 100px; 
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-repeat: no-repeat;
+  
 }
-
+/* 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -35,4 +47,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */
