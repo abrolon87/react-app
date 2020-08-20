@@ -16,7 +16,7 @@ class ProductsContainer extends Component {
   render() {
     return (
       <div>
-        <Nav/>
+        
         <Switch>
           <Route path='/products/new' component={ProductForm}/>
           <Route path='/products/:id' render={(routerProps) => <Product {...routerProps} products={this.props.products}/>} />

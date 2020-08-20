@@ -8,15 +8,19 @@ import {Provider} from 'react-redux'
 import {BrowserRouter as Router} from 'react-router-dom'
 import './index.css';
 import App from './App';
+import Nav from './components/Nav'
+import * as serviceWorker from './serviceWorker';
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
-
+// Home Page, Nav, Routes, 
 ReactDOM.render(
   <Provider store={store}>
     <Router>
+    <Nav />
     <App />
     </Router>
   </Provider>, 
   document.getElementById('root'));
 
 
+serviceWorker.unregister();
