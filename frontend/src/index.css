@@ -1,13 +1,11 @@
-
+.App {
+  text-align: center;
+}
 
 body {
   margin: 0; 
   font-family: 'Comic Sans MS', cursive, sans-serif;
   color: black;
-  
-  
-  
-
 }
 
 #productlist {
@@ -19,22 +17,21 @@ body {
   background-repeat: no-repeat;
   background-position: center; 
   background-image: url("herbs.png");
-  
   background-repeat: no-repeat;
   background-size: absolute; 
   height: 400px;
   width: 100vw;
-}
-/* body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin-bottom: 5rem;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-} */
+#productcontainer {
+  margin-bottom: 5rem;
+}
+
+#productform {
+  margin-bottom: 5rem;
+}
+
+#navbar {
+  margin-bottom: 5rem;
+}

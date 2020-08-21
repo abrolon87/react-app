@@ -11,7 +11,7 @@ const Product = (props) => {
   console.log(product)
   
   return (
-    <div>
+    <div id="productcontainer">
       <h2>
        {product ? product.name : null}
       </h2>
