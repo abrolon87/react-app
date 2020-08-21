@@ -5,7 +5,7 @@ import Product from './Product'
 const Products = (props) => {
   
   return (
-    <div>
+    <div id="productlist">
       {props.products.map(product => 
       <li key={product.id}>
         <Link to={`/products/${product.id}`}>{product.name}</Link>
