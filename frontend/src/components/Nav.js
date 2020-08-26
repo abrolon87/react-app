@@ -11,14 +11,11 @@ const Nav = (props) => {
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-link active" href="#">Home <span class="sr-only">(current)</span></a>
           <Link to="/products" class="nav-link" href="#">Products</Link>
           <Link to="/products/new" class="nav-link" href="#">Add a Product</Link>
         </div>
       </div>
     </nav>
-      {/* <Link to='/products' style={{paddingRight: '10px'}}><h2>Products</h2></Link>
-      <Link to='/products/new'> <h2>Add Product </h2></Link> */}
     </div>
   )
 }

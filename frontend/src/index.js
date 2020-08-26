@@ -12,7 +12,7 @@ import Nav from './components/Nav'
 import * as serviceWorker from './serviceWorker';
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)))
-// Home Page, Nav, Routes, 
+
 ReactDOM.render(
   <Provider store={store}>
     <Router>

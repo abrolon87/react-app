@@ -3,7 +3,6 @@ import {connect} from 'react-redux'
 import { addPurpose } from '../actions/purposes'
 
 class PurposeForm extends Component {
-
   state = {
     body: ''
   }

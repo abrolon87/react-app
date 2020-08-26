@@ -16,7 +16,7 @@ export const addPurpose = (purpose, productId) => {
 export const deletePurpose = (purposeId, productId) => {
 
   return (dispatch) => {
-    return fetch(`http://localhost:3001/products/${productId}/purposes/${purposeId}`, {
+    fetch(`http://localhost:3001/products/${productId}/purposes/${purposeId}`, {
       method: 'DELETE'
     })
     .then(resp => resp.json())

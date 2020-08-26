@@ -5,7 +5,7 @@ import {getProducts, deleteProduct} from '../actions/products'
 import Products from '../components/Products'
 import Product from '../components/Product'
 import ProductForm from '../components/ProductForm' 
-import Nav from '../components/Nav'
+
 
 class ProductsContainer extends Component {
 
