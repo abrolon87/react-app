@@ -36,7 +36,7 @@ export default (state = {products: [], loading: false}, action) => {
     case "PRODUCT_DELETED":
       return {
         ...state,
-        products: [...state.products.filter(product => `${product.id}` !== action.payload)],
+        products: [...state.products.filter(product => `${product.id}` != action.payload)],
         loading: false
       }
      

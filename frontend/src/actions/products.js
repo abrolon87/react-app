@@ -27,10 +27,9 @@ export const deleteProduct = (id) => {
     dispatch({type: "DELETING_PRODUCT"})
     fetch(`http://localhost:3001/products/${id}`, {
       method: "DELETE",
-      headers: {
-        'Content-Type': 'application/json'
-      }
+      
     })
+    .then(resp => resp.json())
     .then(() => dispatch({type: "PRODUCT_DELETED", payload: id }))
   }
 }

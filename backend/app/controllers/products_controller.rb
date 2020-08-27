@@ -26,7 +26,9 @@ class ProductsController < ApplicationController
   # end
 
   def destroy
-    product = Product.find(params[:id])
+    
+    product = Product.find_by(id: params[:id])
+    
     product.delete
     render json: {productId: product.id}
   end
