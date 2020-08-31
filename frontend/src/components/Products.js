@@ -16,7 +16,7 @@ const Products = (props) => {
       {props.products.map(product => 
       <li key={product.id}>
         <Link to={`/products/${product.id}`}>{product.name}</Link>
-        <button id={product.id} onClick={() => handleClick(product)}>X</button>
+        <button id={product.id} onClick={() => handleClick(product)}>x</button>
       </li>)}
     </div>
   )

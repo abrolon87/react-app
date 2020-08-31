@@ -13,4 +13,4 @@ class PurposesContainer extends Component {
   }
 }
 
-export default  PurposesContainer
+export default PurposesContainer
