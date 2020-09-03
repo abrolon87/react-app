@@ -1,37 +1,53 @@
-import React, {Component} from 'react'
-import {connect} from 'react-redux'
-import {Route, Switch} from 'react-router-dom'
-import {getProducts, deleteProduct} from '../actions/products'
-import Products from '../components/Products'
-import Product from '../components/Product'
-import ProductForm from '../components/ProductForm' 
-
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Route, Switch } from "react-router-dom";
+import { getProducts, deleteProduct } from "../actions/products";
+import Products from "../components/Products";
+import Product from "../components/Product";
+import ProductForm from "../components/ProductForm";
 
 class ProductsContainer extends Component {
-
   componentDidMount() {
-    this.props.getProducts()
+    this.props.getProducts();
   }
 
   render() {
     return (
       <div>
         <Switch>
-          <Route path='/products/new' component={ProductForm}/>
-          <Route path='/products/:id' render={(routerProps) => <Product {...routerProps} products={this.props.products}/>} />
-          <Route path='/products' render={(routerProps) => <Products {...routerProps} products={this.props.products}/>} />
+          <Route path="/products/new" component={ProductForm} />
+          <Route
+            path="/products/:id"
+            render={(routerProps) => {
+              return (
+                <Product
+                  product={
+                    this.props.products.filter((product) => {
+                      return product.id == routerProps.match.params.id;
+                    })[0]
+                  }
+                />
+              );
+            }}
+          />
+          <Route
+            path="/products"
+            render={(routerProps) => (
+              <Products {...routerProps} products={this.props.products} />
+            )}
+          />
         </Switch>
       </div>
-    )
+    );
   }
-
-  
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
     products: state.productReducer.products,
-    loading: state.productReducer.loading
-  }
-}
-export default connect(mapStateToProps, {getProducts, deleteProduct})(ProductsContainer);
+    loading: state.productReducer.loading,
+  };
+};
+export default connect(mapStateToProps, { getProducts, deleteProduct })(
+  ProductsContainer
+);
