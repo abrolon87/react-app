@@ -23,7 +23,7 @@ class ProductsContainer extends Component {
                 <Product
                   product={
                     this.props.products.filter((product) => {
-                      return product.id == routerProps.match.params.id;
+                      return product.id === routerProps.match.params.id;
                     })[0]
                   }
                 />
@@ -43,11 +43,13 @@ class ProductsContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state);
   return {
     products: state.productReducer.products,
     loading: state.productReducer.loading,
   };
 };
+
 export default connect(mapStateToProps, { getProducts, deleteProduct })(
   ProductsContainer
 );
