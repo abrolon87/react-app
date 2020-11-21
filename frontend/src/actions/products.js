@@ -1,9 +1,8 @@
 export const getProducts = () => {
   return (dispatch) => {
-    dispatch({type: "LOADING_PRODUCTS"})
-    fetch('http://localhost:3001/products')
+    fetch('http://localhost:3000/products')
     .then(resp => resp.json())
-    .then(products => dispatch({type: "PRODUCTS_LOADED", payload: products}))
+    .then(products => dispatch({type: "GET_PRODUCTS", payload: products}))
   }
 }
 
