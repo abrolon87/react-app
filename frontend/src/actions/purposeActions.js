@@ -1,7 +1,7 @@
 export const addPurpose = (purpose, productId) => {
 
   return (dispatch) => {
-    fetch(`http://localhost:3001/products/${productId}/purposes`, {
+    fetch(`http://localhost:3000/products/${productId}/purposes`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -16,7 +16,7 @@ export const addPurpose = (purpose, productId) => {
 export const deletePurpose = (purposeId, productId) => {
 
   return (dispatch) => {
-    fetch(`http://localhost:3001/products/${productId}/purposes/${purposeId}`, {
+    fetch(`http://localhost:3000/products/${productId}/purposes/${purposeId}`, {
       method: 'DELETE'
     })
     .then(resp => resp.json())

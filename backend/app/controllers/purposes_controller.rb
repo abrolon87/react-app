@@ -27,17 +27,12 @@ class PurposesController < ApplicationController
     end
   
   end
-  
-  # def update 
-    
-  # end
 
   def destroy
     purpose = Purpose.find(params["id"])
-    #product = Product.find(purpose.product_id)
     purpose.destroy
     
-    render json: @product#{purposeId: purpose.id}
+    render json: @product
   end
   
   private 

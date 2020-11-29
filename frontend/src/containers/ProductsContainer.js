@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Route, Switch } from "react-router-dom";
-import { getProducts, deleteProduct } from "../actions/products";
+import { getProducts, deleteProduct } from "../actions/productActions";
 import Products from "../components/Products";
 import Product from "../components/Product";
 import ProductForm from "../components/ProductForm";
@@ -16,23 +16,8 @@ class ProductsContainer extends Component {
       <div>
         <Switch>
           <Route path="/products/new" component={ProductForm} />
-          <Route
-            path="/products/:id"
-            render={(routerProps) => {
-              return (
-                <Product
-                  product={
-                    this.props.products.filter((product) => {
-                      return product.id === routerProps.match.params.id;
-                    })[0]
-                  }
-                />
-              );
-            }}
-          />
-          <Route
-            path="/products"
-            render={(routerProps) => (
+          <Route path="/products/:id" render={(routerProps) => <Product {...routerProps} products={this.props.products}/>}/>
+          <Route path="/products" render={(routerProps) => (
               <Products {...routerProps} products={this.props.products} />
             )}
           />
@@ -42,14 +27,14 @@ class ProductsContainer extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
-  console.log(state);
+const mapStateToProps = state => {
+  
   return {
-    products: state.productReducer.products,
-    loading: state.productReducer.loading,
+    products: state.productReducer.products
   };
 };
 
 export default connect(mapStateToProps, { getProducts, deleteProduct })(
   ProductsContainer
 );
+// connect dispatches action to reducer

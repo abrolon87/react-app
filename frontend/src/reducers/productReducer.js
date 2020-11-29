@@ -1,43 +1,23 @@
-export default (state = {products: [], loading: false}, action) => {
+export default (state = {products: []}, action) => {
   
   switch(action.type){
-    case "LOADING_PRODUCTS":
-      return {
-        ...state, 
-        loading: true
-      }
-
-    case "PRODUCTS_LOADED":
-      return {
-        ...state, 
-        products: action.payload,
-        loading: false
-      }
-
-    case "ADDING_PRODUCT":
+    
+    case "GET_PRODUCTS":
       return {
         ...state,
-        loading: true
+        products: action.payload
       }
 
-    case "PRODUCT_ADDED":
+    case "ADD_PRODUCT":
       return {
         ...state,
-        products: [...state.products, action.payload],
-        loading: false
+        products: [...state.products, action.payload]
       }
 
-    case "DELETING_PRODUCT":
+    case "DELETE_PRODUCT":
       return {
         ...state,
-        loading: true
-      }
-  
-    case "PRODUCT_DELETED":
-      return {
-        ...state,
-        products: [...state.products.filter(product => `${product.id}` !== action.payload)],
-        loading: false
+        products: [...state.products.filter(product => `${product.id}` !== action.payload)]
       }
      
     case "ADD_PURPOSE":
@@ -51,14 +31,13 @@ export default (state = {products: [], loading: false}, action) => {
       return {...state, products: products}
     
     case "DELETE_PURPOSE":
-      
       let purposeProducts = state.products.map(product => {
-          if (product.id === action.payload.id) {
-            return action.payload
-          } else {
-            return product
-          }
-        })
+        if (product.id === action.payload.id) {
+          return action.payload
+        } else {
+          return product
+        }
+      })
       return {...state, 
         products: purposeProducts
       }

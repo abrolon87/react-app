@@ -8,8 +8,7 @@ export const getProducts = () => {
 
 export const addProduct = (product) => {
   return (dispatch) => {
-    dispatch({type: "ADDING_PRODUCT"})
-    fetch('http://localhost:3001/products', {
+    fetch('http://localhost:3000/products', {
       method: "POST",
       body: JSON.stringify(product),
       headers: {
@@ -17,18 +16,16 @@ export const addProduct = (product) => {
       }
     })
     .then(resp => resp.json())
-    .then(product => dispatch({type: "PRODUCT_ADDED", payload: product }))
+    .then(product => dispatch({type: "ADD_PRODUCT", payload: product }))
   }
 }
 
 export const deleteProduct = (id) => {
   return (dispatch) => {
-    dispatch({type: "DELETING_PRODUCT"})
-    fetch(`http://localhost:3001/products/${id}`, {
-      method: "DELETE",
-      
+    fetch(`http://localhost:3000/products/${id}`, {
+      method: "DELETE",  
     })
     .then(resp => resp.json())
-    .then(() => dispatch({type: "PRODUCT_DELETED", payload: id }))
+    .then(() => dispatch({type: "DELETE_PRODUCT", payload: id }))
   }
 }

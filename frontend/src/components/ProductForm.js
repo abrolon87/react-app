@@ -1,12 +1,11 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import { addProduct } from '../actions/products'
+import { addProduct } from '../actions/productActions'
 
 
 class ProductForm extends Component {
   state = {
-    name: "",
-    loading: false
+    name: ""
   }
 
   handleChange = (event) => {
@@ -17,11 +16,10 @@ class ProductForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    const product = {name: this.state.name}
-    this.props.addProduct(product)
+    //const product = {name: this.state.name}
+    this.props.addProduct(this.state)
     this.setState({
-      name: "",
-      loading: false
+      name: ""
     })
     this.props.history.push('/products')
   }
@@ -30,9 +28,9 @@ class ProductForm extends Component {
     return (
       <div id="productform">
         <form onSubmit={this.handleSubmit}>
-          <input type="text" name="name"
+          <input type="text" name="name" placeholder="Enter product name"
           value={this.state.name} 
-          onChange={this.handleChange} />
+          onChange={this.handleChange} /><br/>
           <input type="submit" value="Add Product" />  
         </form>
       </div>

@@ -1,15 +1,13 @@
 import React from 'react'
 import Product from './Product'
 import {connect} from 'react-redux'
-import {deletePurpose} from '../actions/purposes'
+import {deletePurpose} from '../actions/purposeActions'
 
 
 
 const Purposes = (props) => {
-    console.log(props.purposes)
-    
+      
 const handleDelete = (purpose) => {
-  
   props.deletePurpose(purpose.id, purpose.product_id)
 }
     

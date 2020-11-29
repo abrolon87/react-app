@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import { addPurpose } from '../actions/purposes'
+import { addPurpose } from '../actions/purposeActions'
 
 class PurposeForm extends Component {
   state = {
