@@ -26,6 +26,6 @@ export const deleteProduct = (id) => {
       method: "DELETE",  
     })
     .then(resp => resp.json())
-    .then(() => dispatch({type: "DELETE_PRODUCT", payload: id }))
+    .then(() => dispatch({type: "DELETE_PRODUCT", payload: id}))
   }
 }

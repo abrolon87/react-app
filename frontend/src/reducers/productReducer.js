@@ -1,10 +1,10 @@
-export default (state = {products: []}, action) => {
+export default function (state = {products: []}, action) {
   
   switch(action.type){
     
     case "GET_PRODUCTS":
       return {
-        ...state,
+        state,
         products: action.payload
       }
 
@@ -17,7 +17,7 @@ export default (state = {products: []}, action) => {
     case "DELETE_PRODUCT":
       return {
         ...state,
-        products: [...state.products.filter(product => `${product.id}` !== action.payload)]
+        products: [...state.products.filter(product => product.id !== action.payload)]
       }
      
     case "ADD_PURPOSE":
