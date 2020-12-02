@@ -1,5 +1,4 @@
 export const addPurpose = (purpose, productId) => {
-
   return (dispatch) => {
     fetch(`http://localhost:3000/products/${productId}/purposes`, {
       method: 'POST',
@@ -14,7 +13,6 @@ export const addPurpose = (purpose, productId) => {
 }
 
 export const deletePurpose = (purposeId, productId) => {
-
   return (dispatch) => {
     fetch(`http://localhost:3000/products/${productId}/purposes/${purposeId}`, {
       method: 'DELETE'
