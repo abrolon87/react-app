@@ -1,7 +1,6 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
-import Product from "./Product"
 import { deleteProduct } from "../actions/productActions";
 
 const Products = (props) => {

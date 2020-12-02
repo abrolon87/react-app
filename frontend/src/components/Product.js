@@ -9,9 +9,7 @@ const Product = (props) => {
   return (
     
     <div>
-
       <h2>Things you can do with {product ? product.name : null}</h2>
-    
       <PurposesContainer product={product} />
     </div>
   );

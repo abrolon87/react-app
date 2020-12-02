@@ -16,7 +16,6 @@ class ProductForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    //const product = {name: this.state.name}
     this.props.addProduct(this.state)
     this.setState({
       name: ""

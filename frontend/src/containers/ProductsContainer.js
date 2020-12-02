@@ -37,4 +37,3 @@ const mapStateToProps = state => {
 export default connect(mapStateToProps, { getProducts, deleteProduct })(
   ProductsContainer
 );
-// connect dispatches action to reducer
